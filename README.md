@@ -27,3 +27,5 @@ Then after making changes, you can create a pull request to merge your changes b
     * Don't submit a pull request to the master branch!
 * Make sure head repository is set to your forked repo and compare is set to the branch your changes are in
 * Add a title and a meaningful description of the changes you've made then click "Create Pull Request"
+* For more details, refer to:
+    * https://help.github.com/en/articles/creating-a-pull-request-from-a-fork
