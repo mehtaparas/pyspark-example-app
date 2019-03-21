@@ -1,5 +1,9 @@
 # pyspark-example-app
-Example PySpark Application
+Example PySpark Application for PySpark Workshop Series
+
+This is the pyspark app we will build upon during our workshop series. 
+For each workshop, we will create a new branch to push our changes to. After making changes, you can create a pull request to merge your changes with this repo. 
+Before creating a new branch, sync your master branch with this repo's master then checkout a new branch.
 
 ### How to sync your forked local master branch with the original repo master branch
 * Add remote with the name "upstream" that points to the original repo 
