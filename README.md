@@ -6,8 +6,9 @@ For each workshop, we will create a new branch to push our changes to by first s
 Then after making changes, you can create a pull request to merge your changes back to this repo. 
 
 ### How to sync your forked local master branch with the original repo master branch
+* Open the Git Bash application and navigate to your project's directory
 * Add remote with the name "upstream" that points to the original repo 
-    * git add remote upstream https://github.com/mehtaparas/pyspark-example-app.git
+    * git remote add upstream https://github.com/mehtaparas/pyspark-example-app.git
 * Fetch branches and commits from upstream repo
     * git fetch upstream
 * Switch to your local master branch if you haven't already
