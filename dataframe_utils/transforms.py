@@ -1,4 +1,4 @@
-from pyspark.sql.functions import col, explode
+from pyspark.sql.functions import col, explode, lower, concat_ws, split
 
 
 def count_per_skill(df):
@@ -10,6 +10,18 @@ def count_per_skill(df):
     skills_count = df.select(
         col("name"),
         explode(col("technical_skills")).alias("skill_name")
-    ).groupBy("skill_name").agg({"name": "count"})
+    ).distinct().groupBy("skill_name").agg({"name": "count"})
 
     return skills_count
+
+
+def lower_array(df, array_col):
+    """
+    this function will take an array<string> column in the passed dataframe
+    and lowercase each element in the array
+    :param df: input dataframe
+    :param array_col: name of the array<string> column
+    :return: dataframe with array<string> column with lowercased elements
+    """
+    return df.withColumn(array_col,
+                         split(lower(concat_ws(",", col(array_col))), ","))
