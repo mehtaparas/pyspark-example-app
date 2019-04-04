@@ -9,6 +9,18 @@ pytestmark = pytest.mark.usefixtures("spark")
 
 
 def assert_df_equals(actual_df, expected_df, sort_col):
+    """
+    This function will help us compare dataframes and see if they are equal.
+        * the spark dataframes are converted to pandas dataframes
+        * then, they are sorted to have a consistent ordering of rows
+        * then the function pandas.testing.assert_frame_equal is used compare the values of
+          the two dataframes
+
+    :param actual_df: Spark DataFrame that is result of applying function to input df
+    :param expected_df: Spark DataFrame with the expected results of the function
+    :param sort_col: column to sort by - needed for assert_frame_equal (compares row to row)
+    :return: raises an AssertionError if test fails
+    """
     actual_df_pd = actual_df.toPandas().sort_values(by=sort_col).reset_index(drop=True)
     expected_df_pd = expected_df.toPandas().sort_values(by=sort_col).reset_index(drop=True)
     assert_frame_equal(actual_df_pd, expected_df_pd)
