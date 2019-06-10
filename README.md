@@ -6,15 +6,19 @@ For each workshop, we will create a new branch to push our changes to by first s
 Then after making changes, you can create a pull request to merge your changes back to this repo. 
 
 ### How to get started setting up your environment
-* Join the [Teams chat](https://teams.microsoft.com/l/channel/19%3a8de987dbd06d4caeaeee085647601973%40thread.skype/PySpark%2520Workshop%2520Series?groupId=7f3ee77b-7617-41ed-bb5f-4fd98d181093&tenantId=9ca75128-a244-4596-877b-f24828e476e2)
+* Join the [Teams chat](https://teams.microsoft.com/l/channel/19%3a8de987dbd06d4caeaeee085647601973%40thread.skype/PySpark%2520Workshop%2520Series?groupId=7f3ee77b-7617-41ed-bb5f-4fd98d181093&tenantId=9ca75128-a244-4596-877b-f24828e476e2) to join the conversation. If you hit any road blocks, message us there.
+* If you have any additions, corrections, or vicious critiscisms of these instructions, please put them in the Teams chat for us to correct. We want to make this work for everyone, and also express that it's someone else's fault. 
 
 #### For Windows users
 * Click [this link](http://boxstarter.org/package/url?https://gist.githubusercontent.com/nguyenuy/6b16704a43f8568c020c4b6bed152a83/raw/7ebd3f59a85303a6180272bf0c31bd68a2710ed1/simple_windows_dev_environment)
+* It should download an application. Once downloaded, try to run. 
+   * If it doesn't run, try copying the link into Edge and trying to download and run the script again
 * This will run a script on your machine to install all the required dependencies to run the workshop application
-* When prompted for your password, it's asking for your windows password, because several restarts will be required by the application install
+* When prompted for your password, it's asking for your windows password, because several restarts will be required by the application install. Just let it do its thing, restarting several times, until finally the CMD window tells you to ```Type ENTER to exit```. Hit ENTER and you're done! 
+* Thank Uy for the automation script next time you see him, or in the Teams chat.
 #### For Mac users:
 * Open Terminal and execute the above command: ```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)“```
-* Note: If you just get a ">" after hitting enter and nothing happens, try closing your terminal window, opening a new window, and entering 
+   * Note: If you just get a ">" after hitting enter and nothing happens, try closing your terminal window, opening a new window, and entering 
 ```xcode-select –install```
 Then try the above command again to install homebrew once your command line developer tools have been installed.
 * Confirm installation by executing:```brew update```
