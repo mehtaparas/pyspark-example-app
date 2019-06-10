@@ -7,7 +7,7 @@ Then after making changes, you can create a pull request to merge your changes b
 
 ### How to get started setting up your environment
 * Join the [Teams chat](https://teams.microsoft.com/l/channel/19%3a8de987dbd06d4caeaeee085647601973%40thread.skype/PySpark%2520Workshop%2520Series?groupId=7f3ee77b-7617-41ed-bb5f-4fd98d181093&tenantId=9ca75128-a244-4596-877b-f24828e476e2) to join the conversation. If you hit any road blocks, message us there.
-* If you have any additions, corrections, or vicious critiscisms of these instructions, please put them in the Teams chat for us to correct. We want to make this work for everyone, and also express that it's someone else's fault. 
+* If you have any additions, corrections, or vicious criticisms of these instructions, please put them in the Teams chat for us to correct. We want to make this work for everyone, and also express that it's someone else's fault. 
 
 #### For Windows users
 * Click [this link](http://boxstarter.org/package/url?https://gist.githubusercontent.com/nguyenuy/6b16704a43f8568c020c4b6bed152a83/raw/7ebd3f59a85303a6180272bf0c31bd68a2710ed1/simple_windows_dev_environment)
@@ -55,6 +55,8 @@ Set global Git username on your machine if you don't have one set already
 * In terminal or cmd prompt enter the following (but with your name and GitHub email):
     * ```git config --global user.name “FirstName LastName”```
     * ```git config --global user.email “email@gmail.com”```
+        * NOTE: If your email is set to private in github, they'll provide you with a no-reply email address like
+         22250475+githubuser@users.noreply.github.com. Use this email for your local git config.
 
 
 
@@ -70,6 +72,17 @@ Set global Git username on your machine if you don't have one set already
 #### Familiarize Yourself With the Project and Commit Your First Changes
 * Inside the pyspark-example-app is the main.py python script, which contains the code that will be run initially when the application is executed. 
 * Inside the data folder are json files, each containing a name and some skills.
+* In the top main menu, select File -> Settings -> Project:\[project name\] -> Project Interpreter
+    and make sure the interpreter is your new Python install. Currently 3.7. 
+    * If not, create a new one.
+    * Click the settings wheel then Add
+    * For location, create a new empty folder somewhere, mine was C:\Users\kendra.billings\PycharmProjects\pyspark-example-app\Python_Interpreter
+    * For base interpreter find where your python.exe is. The most recently installed one. Mine was at C:\Python37\python.exe
+    * Select OK
+    * You'll have to wait for a bit for the project to process these changes. Check the status at the bottom of your screen. 
+* Find the requirements.txt in the root directory and open it. Above you should see
+    a yellow bar with an option to install project dependencies. Click on it and wait for the
+    progress indicator at the bottom of the screen to indicate it's finished indexing. 
 * Right click on one of the data files and select “Copy”
 * Right click on the data folder and select “Paste”
 * Name the file [your last name].json and select “OK”
@@ -81,7 +94,8 @@ Set global Git username on your machine if you don't have one set already
     * Enter a useful commit message. What change did you make?
     * If you set a global git user earlier in the Git set up, you can leave the “Author” field blank.
     * Select commit
-* Select VCS -> Git -> Push in the top bar to push your locally committed changes to your origin repo on GitHub
+* Select VCS -> Git -> Push in the top bar to push your locally committed changes to your origin repo on GitHub.
+    * Make sure destination is origin/\[current branch\]
 
 
 
