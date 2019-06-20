@@ -25,3 +25,7 @@ def lower_array(df, array_col):
     """
     return df.withColumn(array_col,
                          split(lower(concat_ws(",", col(array_col))), ","))
+
+# This is a dummy function that contains no logic. In this workshop, we will be adding the logic to make the test pass.
+def filter_by_skill(dataframe,skill):
+    return dataframe
