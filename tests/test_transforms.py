@@ -90,16 +90,5 @@ def test_workshop_4(spark):
     df_state_coolness_index = spark.read.csv("data/state_coolness_index.csv", header=True)
     df_people = spark.read.csv("data/people.csv", header=True)
     df_answer = spark.read.csv("data/answer.csv", header=True)
-    df_answer = df_answer.withColumn('is_cool', col('is_cool').cast("boolean"))
-
-    df_state_count = df_people.groupBy("state").count()
-
-    df_conversion = df_state_coolness_index.join(df_state_count, ['state'], how='inner')
-    
-    df_conversion = df_conversion.withColumn("is_cool", when(col('coolness_factor')*col('count') > lit(50), True).otherwise(False))
-    df_conversion.show()
-
-    df_conversion = df_conversion.select(['state', 'is_cool'])
-
     df_conversion = get_workshop_dataframe(df_people, df_state_coolness_index)
     assert_df_equals(df_conversion, df_answer, 'state')
