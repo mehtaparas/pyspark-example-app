@@ -1,4 +1,4 @@
-from pyspark.sql.functions import col, explode, lower, concat_ws, split
+from pyspark.sql.functions import *
 
 
 def count_per_skill(df):
@@ -29,3 +29,13 @@ def lower_array(df, array_col):
 # This is a dummy function that contains no logic. In this workshop, we will be adding the logic to make the test pass.
 def filter_by_skill(dataframe,skill):
     return dataframe
+
+
+def get_workshop_dataframe(df_people, df_state_coolness_index):
+    """
+    this function takes in a dataframe of people and dataframe of state_coolness_indices
+    and computes if the state is cool
+    :param df_people: people dataframe
+    :param df_state_coolness_index
+    """
+    return df_people
