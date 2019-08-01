@@ -38,4 +38,11 @@ def get_workshop_dataframe(df_people, df_state_coolness_index):
     :param df_people: people dataframe
     :param df_state_coolness_index
     """
-    return df_people
+
+    df_state_peeps_count = df_people.groupBy("state").count()
+    df_join = df_state_peeps_count.join(df_state_coolness_index, ['state'], how = 'inner')
+    df_result = df_join.withColumn("is_cool", when(col('coolness_factor') * col('count') > lit(50), 'true')
+                                   .otherwise('false'))
+    # df_result.show()
+
+    return df_result

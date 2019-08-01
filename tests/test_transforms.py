@@ -87,9 +87,10 @@ def test_lower_array(spark):
 
 from pyspark.sql.functions import *
 def test_workshop_4(spark):
-    df_state_coolness_index = spark.read.csv("data/state_coolness_index.csv", header=True)
-    df_people = spark.read.csv("data/people.csv", header=True)
-    df_answer = spark.read.csv("data/answer.csv", header=True)
+    df_state_coolness_index = spark.read.csv("/Users/kendra.billings/Repos/pyspark4/data/state_coolness_index.csv", header=True)
+    df_people = spark.read.csv("/Users/kendra.billings/Repos/pyspark4/data/people.csv", header=True)
+    df_answer = spark.read.csv("/Users/kendra.billings/Repos/pyspark4/data/answer.csv", header=True)
     df_conversion = get_workshop_dataframe(df_people, df_state_coolness_index)
     df_conversion = df_conversion.select(['state', 'is_cool'])
+    # df_answer.show()
     assert_df_equals(df_conversion, df_answer, 'state')
