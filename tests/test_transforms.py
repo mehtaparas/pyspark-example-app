@@ -91,4 +91,5 @@ def test_workshop_4(spark):
     df_people = spark.read.csv("data/people.csv", header=True)
     df_answer = spark.read.csv("data/answer.csv", header=True)
     df_conversion = get_workshop_dataframe(df_people, df_state_coolness_index)
+    df_conversion = df_conversion.select(['state', 'is_cool'])
     assert_df_equals(df_conversion, df_answer, 'state')
